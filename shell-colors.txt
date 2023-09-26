@@ -1,0 +1,3 @@
+Shell red: 255, 64, 54 #FF4036
+Shell yellow: 255, 221, 51  #FFDD33
+Gas green: 21, 190, 22
