@@ -41,3 +41,4 @@ next-env.d.ts
 package.json
 package-lock.json
 .env
+shell-colors.txt
