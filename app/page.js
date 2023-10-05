@@ -1,9 +1,5 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link';
-
 import { useState } from 'react';
-import Nav from '@components/Nav';
 import Reservoir from '@components/Reservoir';
 // import TypeBar from '@components/TypeBar';
 import ReservoirType from '@components/ReservoirType';
@@ -169,7 +165,6 @@ function Home() {
   }
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
-      <Nav />
       <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <Reservoir field={field} layer={layer} block={block} setStoiip={setStoiip} setField={setField} setLayer={setLayer} setBlock={setBlock} setFullName={setFullName} fullName={fullName} onResChange={handleResChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">

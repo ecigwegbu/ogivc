@@ -1,8 +1,10 @@
 'use client'
 
 import { useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 
 const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBlock, setFullName, fullName, onResChange }) => {
+  const { data: session } = useSession();
   const handleFieldChange = (e) => {
     setField(e.target.value);
     // setFullName(`${e.target.value}-${layer}-${block}`);
@@ -51,11 +53,10 @@ const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBloc
       </fieldset>
       <div className='ml-2 flex flex-col w-16 justify-around mr-2 mt-1 font-bold shadow-lg'>
         <button className='bg-slate-200'>Reset</button>
-        <button className='bg-slate-200'>Save</button>
-        <button className='bg-slate-200'>Load</button>
+        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`}>Save</button>
+        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`}>Load</button>
       </div>
     </div>
   )
 }
-
 export default Reservoir;
