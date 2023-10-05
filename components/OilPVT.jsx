@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange }) => {
+const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, reservoirType }) => {
   const handleBoiChange = (e) => {
     // console.log('Hello Boi');
     setBoi(e.target.value);
@@ -23,7 +23,7 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange }) => 
 
 
   return (
-    <fieldset className="mt-1 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around">
+    <fieldset className={`mt-1 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around ${reservoirType === 'gas' ? 'hidden' : ''}`}>
       <legend className="font-bold bg-gradient-to-r from-red-900 via-orange-500 to-yellow-600 bg-clip-text text-transparent">Oil Properties:</legend>
       <div className="inline-block text-center">
         <p>Boi:</p>

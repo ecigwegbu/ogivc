@@ -47,14 +47,14 @@ const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBloc
         <p>Block</p>
         </div>
       <div className='inline-block text-center'>
-        <input className='border w-20 bg-white-100 text-center' type='text' id='fullName' name='fullName' value={fullName} readOnly />
-        <p>Full Name</p>
+        <input className='border w-20 bg-white-100 text-center text-slate-400' type='text' id='fullName' name='fullName' value={fullName} readOnly />
+        <p className='text-slate-400'>Full Name</p>
         </div>
       </fieldset>
       <div className='ml-2 flex flex-col w-16 justify-around mr-2 mt-1 font-bold shadow-lg'>
         <button className='bg-slate-200'>Reset</button>
-        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`}>Save</button>
-        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`}>Load</button>
+        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`} disabled={!session}>Save</button>
+        <button className={`bg-slate-200 ${!session ? 'text-gray-400 font-extrabold' : ''}`} disabled={!session}>Load</button>
       </div>
     </div>
   )

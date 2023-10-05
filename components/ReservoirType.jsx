@@ -1,12 +1,27 @@
-const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMfactor, onTypeBarChange }) => {
+const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMFactor, onTypeBarChange }) => {
     // reservoirType, setReservoirType, mFactor, setMFactor, onTypeBarChange
     const handleReservoirTypeChange = (e) => {
-        // alert(e.target.value);
+      setReservoirType(e.target.value);
+      if (e.target.value !== 'both') {
+        setMFactor('');
+      };
+    }
+
+    const handleMFactorChange = (e) => {
+      setMFactor(e.target.value);
     }
 
   return (
-    <div className='sticky top-10 bg-slate-300 flex flex-row h-15 pb-1 justify-around w-full border-4 border-solid border-red-900 self-start'>
-    <div className='mt-2 w-24 border ml-2 mr-2 h-8 rounded-tl-full rounded-tr-full bg-gradient-to-b from-green-500 via-red-500 to-blue-500'>&nbsp;</div>
+    <div className={`sticky top-10 bg-slate-300 flex flex-row h-15 pb-1 justify-around w-full border-4 border-solid border-red-900 self-start`}>
+    <div className={`mt-2 w-24 border ml-2 mr-2 h-8 rounded-tl-full rounded-tr-full bg-gradient-to-b
+      ${
+        reservoirType==='oil' ? 'from-red-500 to-blue-500' : (
+          reservoirType==='gas' ? 'from-green-500 to-blue-500'
+          : 'from-green-500 via-red-500 to-blue-500'
+        )
+      }`
+    }
+    >&nbsp;</div>
     <div className='flex'>
     <fieldset className="mt-0 mb-0 ml-0 rounded-md bg-stone-200 text-xs mr-2 p-2 max-w-xs flex justify-around border border-solid border-blue-900" onChange={(e) => handleReservoirTypeChange(e)}>
         <legend className='font-bold'>Reservoir Type:</legend>
@@ -28,18 +43,10 @@ const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMfactor, o
       </fieldset>
         <div className='items-start mt-0 mb-0 mr-2 rounded-md h-10 bg-stone-200 text-xs p-2 pt-0 pb-0 flex flex-col self-end justify-center border border-solid border-blue-900'>
           <p className='ml-1 p-0 '>M&nbsp;Factor:</p>
-          <input className='w-14 border-l mt-0 text-center' type='text' id='mFactor' name='mFactor' placeholder='both only' readOnly/>
+          <input className='w-14 border-l mt-0 text-center' type='text' id='mFactor' name='mFactor' placeholder={reservoirType === 'both' ? '' : 'both only'} value={mFactor} readOnly={reservoirType !== 'both'} onChange={(e) => handleMFactorChange(e)}/>
         </div>
         </div>
     </div>
   )
 }
-  
 export default ReservoirType;
-/*
-    <div className='sticky top-10 bg-slate-300 flex flex-row h-15 justify-around w-full border-4 border-solid border-red-900 self-start'>
-/*
-    <div className='sticky top-10 bg-slate-300 flex flex-row h-15 justify-around w-full border-4 border-solid border-red-900 self-start'>
-        <div className='mt-2 w-4 bg-gradient-to-b from-green-500 via-red-500 to-blue-500 mr-1'>&nbsp;</div>
-        <ReservoirType setReservoirType={setReservoirType} setMFactor={setMFactor} onChange={handleReservoirTypeChange}/>
-    </div> */

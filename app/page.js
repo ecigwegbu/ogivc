@@ -24,8 +24,8 @@ function Home() {
   const [swco, setSwco] = useState('');
   const [satg, setSatg] = useState('');
   const [swcg, setSwcg] = useState('');
-  const [reservoirType, setReservoirType] = useState('');
-  const [mFactor, setMFactor] = useState();
+  const [reservoirType, setReservoirType] = useState('both');
+  const [mFactor, setMFactor] = useState('');
   const [field, setField] = useState('');
   const [layer, setLayer] = useState('');
   const [block, setBlock] = useState('');
@@ -168,8 +168,8 @@ function Home() {
       <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <Reservoir field={field} layer={layer} block={block} setStoiip={setStoiip} setField={setField} setLayer={setLayer} setBlock={setBlock} setFullName={setFullName} fullName={fullName} onResChange={handleResChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">
-        <OilPVT boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} />
-        <GasPVT ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} />
+        <OilPVT boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
+        <GasPVT ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />
         <RockProperties poro={poro} ntgo={ntgo} porg={porg} ntgg={ntgg} setPoro={setPoro} setNtgo={setNtgo} setPorg={setPorg} setNtgg={setNtgg} onRockPropertiesChange={handleRockPropertiesChange} />
         <Saturations sato={sato} swaco={swco} satg={satg} swcg={swcg} setSato={setSato} setSwco={setSwco} setSatg={setSatg} setSwcg={setSwcg} onSaturationsChange={handleSaturationsChange} />
         <Volumes grvOil={grvOil} grvCapGas={grvCapGas} stoiip={stoiip} sgiip={sgiip} fgiip={fgiip} ciip={ciip} rfo={rfo} rfsg={rfsg} rffg={rffg} rfcond={rfcond} uro={uro} ursg={ursg} urfg={urfg} urcond={urcond} setGrvOil={setGrvOil} setGrvCapGas={setGrvCapGas} setRfo={setRfo} setRfsg={setRfsg} setRffg={setRffg} setRfcond={setRfcond} onVolumesChange={handleVolumesChange} />
