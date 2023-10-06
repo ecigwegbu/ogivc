@@ -13,8 +13,19 @@ module.exports = {
       },
       colors: {
         'primary-orange': '#FF5722',
+      },
+      utilities: {
+        '.no-spinners': {
+          '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
+            '-webkit-appearance': 'none',
+            'margin': '0',
+          },
+          '&': {
+            '-moz-appearance': 'textfield',
+          }
+        }
       }
-    },
+    }
   },
   plugins: [],
 }

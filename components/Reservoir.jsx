@@ -33,19 +33,19 @@ const Reservoir = ({ field, layer, block, setField, setLayer, setBlock, setResCo
       <fieldset className="mt-0 mb-0 ml-2 bg-gray-100 text-xs p-2 w-full flex justify-around border border-solid border-blue-900 border-2">
         <legend className='font-bold'>Reservoir:</legend>
       <div className='inline-block text-center'>
-        <input className='border w-16 bg-white-100 text-center' type='text' id='field' name='field' onChange={(e) => handleFieldChange(e)}/>
+        <input className='border w-16 bg-white-100 text-center' type='text' id='field' name='field' value={field} onChange={(e) => handleFieldChange(e)}/>
         <p>Field</p>
       </div>
       <div className='inline-block text-center'>
-        <input className='border w-16 bg-white-100 text-center' type='text' id='layer' name='layer' onChange={(e) => handleLayerChange(e)} />
+        <input className='border w-16 bg-white-100 text-center' type='text' id='layer' name='layer' value={layer} onChange={(e) => handleLayerChange(e)} />
         <p>Layer</p>
       </div>
       <div className='inline-block text-center'>
-        <input className='border w-10 bg-white-100 text-center' type='text' id='block' name='block' onChange={(e) => handleBlockChange(e)}/>
+        <input className='border w-10 bg-white-100 text-center' type='text' id='block' name='block' value={block} onChange={(e) => handleBlockChange(e)}/>
         <p>Block</p>
         </div>
       <div className='inline-block text-center'>
-        <input className='border w-20 bg-white-100 text-center text-slate-400' type='text' id='resCode' name='resCode' value={resCode} readOnly />
+        <input className='border w-24 bg-white-100 text-center text-slate-400' type='text' id='resCode' name='resCode' value={resCode} readOnly />
         <p className='text-slate-400'>Res. Code</p>
         </div>
       </fieldset>

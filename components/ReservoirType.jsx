@@ -43,7 +43,7 @@ const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMFactor, o
       </fieldset>
         <div className='items-start mt-0 mb-0 mr-2 rounded-md h-10 bg-stone-200 text-xs p-2 pt-0 pb-0 flex flex-col self-end justify-center border border-solid border-blue-900'>
           <p className='ml-1 p-0 '>M&nbsp;Factor:</p>
-          <input className='w-14 border-l mt-0 text-center' type='text' id='mFactor' name='mFactor' placeholder={reservoirType === 'both' ? '' : 'both only'} value={mFactor} readOnly={reservoirType !== 'both'} onChange={(e) => handleMFactorChange(e)}/>
+          <input className='w-14 border-l mt-0 text-right no-spinners' type='number' id='mFactor' name='mFactor' placeholder={reservoirType === 'both' ? '' : 'both only'} value={mFactor} readOnly={reservoirType !== 'both'} onChange={(e) => handleMFactorChange(e)}/>
         </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ function Home() {
   const [resCode, setResCode] = useState('');
   const [reservoirType, setReservoirType] = useState('both');
   const [mFactor, setMFactor] = useState('');
-  const [boi, setBoi] = useState('');
+  const [boi, setBoi] = useState(1);
   const [rsi, setRsi] = useState('');
   const [rhoo, setRhoo] = useState('');
   const [ei, setEi] = useState('');

@@ -29,10 +29,11 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
       <div className="inline-block text-center mr-2">
         <p>GRV-oil:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-16 bg-beige-100 text-right"
+          type="number"
           id="grvOil"
           name="grvOil"
+          value={grvOil}
           onChange={(e) => handleGrvOilChange(e)}
         />
         <p>Macft</p>
@@ -40,10 +41,11 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
       <div className="inline-block text-center mr-2">
         <p>GRV-cap gas:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-16 bg-beige-100 text-right"
+          type="number"
           id="grvCapGas"
           name="grvCapGas"
+          value={grvCapGas}
           onChange={(e) => handleGrvCapGasChange(e)}
         />
         <p>Macft</p>

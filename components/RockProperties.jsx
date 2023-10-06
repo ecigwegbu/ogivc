@@ -29,10 +29,11 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center mr-2">
         <p>Poro:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-12 bg-beige-100 text-right"
+          type="number"
           id="poro"
           name="poro"
+          value={poro}
           onChange={(e) => handlePoroChange(e)}
         />
         <p>(frac)</p>
@@ -40,10 +41,11 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center mr-2">
         <p>N/Go:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-12 bg-beige-100 text-right"
+          type="number"
           id="ntgo"
           name="ntgo"
+          value={ntgo}
           onChange={(e) => handleNtgoChange(e)}
         />
         <p>(frac)</p>
@@ -51,10 +53,11 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center mr-2">
         <p>Porg:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-12 bg-beige-100 text-right"
+          type="number"
           id="porg"
           name="v/v"
+          value={porg}
           onChange={(e) => handlePorgChange(e)}
         />
         <p>(frac)</p>
@@ -62,10 +65,11 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center">
         <p>N/Gg:</p>
         <input
-          className="border w-12 bg-beige-100"
-          type="text"
+          className="border w-12 bg-beige-100 text-right"
+          type="number"
           id="ntgg"
           name="v/v"
+          value={ntgg}
           onChange={(e) => handleNtggChange(e)}
         />
         <p>(frac)</p>

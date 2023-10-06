@@ -28,10 +28,11 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, reser
       <div className="inline-block text-center">
         <p>Boi:</p>
         <input
-          className="border w-16 bg-red-200"
-          type="text"
+          className="border w-16 bg-red-200 text-right"
+          type="number"
           id="boi"
           name="boi"
+          value={boi}
           onChange={(e) => handleBoiChange(e)}
         />
         <p>rb/stb</p>
@@ -39,10 +40,11 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, reser
       <div className="inline-block text-center">
         <p>Rsi:</p>
         <input
-          className="border w-16 bg-red-200"
-          type="text"
+          className="border w-16 bg-red-200 text-right"
+          type="number"
           id="rsi"
           name="rsi"
+          value={rsi}
           onChange={(e) => handleRsiChange(e)}
         />
         <p>Mscf/stb</p>
@@ -50,10 +52,11 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, reser
       <div className="inline-block text-center">
         <p>&gamma;o:</p>
         <input
-          className="border w-16 bg-red-200"
-          type="text"
+          className="border w-16 bg-red-200 text-right"
+          type="number"
           id="rho"
           name="v/v"
+          value={rhoo}
           onChange={(e) => handleRhooChange(e)}
         />
         <p>v/v</p>

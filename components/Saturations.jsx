@@ -29,10 +29,11 @@ const Saturations = ({ sato, swco, satg, swcg, setSato, setSwco, setSatg, setSwc
       <div className="inline-block text-center mr-2">
         <p>Sato:</p>
         <input
-          className="ml-2 border w-12 bg-blue-100"
-          type="text"
+          className="ml-2 border w-12 bg-blue-100 text-right"
+          type="number"
           id="sato"
           name="sato"
+          value={sato}
           onChange={(e) => handleSatoChange(e)}
         />
         <p>(frac)</p>
@@ -40,10 +41,11 @@ const Saturations = ({ sato, swco, satg, swcg, setSato, setSwco, setSatg, setSwc
       <div className="inline-block text-center mr-2">
         <p>Swco:</p>
         <input
-          className="ml-2 border w-12 bg-blue-100"
-          type="text"
+          className="ml-2 border w-12 bg-blue-100 text-right"
+          type="number"
           id="swco"
           name="swco"
+          value={swco}
           onChange={(e) => handleSwcoChange(e)}
         />
         <p>(frac)</p>
@@ -51,10 +53,11 @@ const Saturations = ({ sato, swco, satg, swcg, setSato, setSwco, setSatg, setSwc
       <div className="inline-block text-center mr-2">
         <p>Satg:</p>
         <input
-          className="ml-2 border w-12 bg-blue-100"
-          type="text"
+          className="ml-2 border w-12 bg-blue-100 text-right"
+          type="number"
           id="satg"
           name="satg"
+          value={satg}
           onChange={(e) => handleSatgChange(e)}
         />
         <p>(frac)</p>
@@ -62,10 +65,11 @@ const Saturations = ({ sato, swco, satg, swcg, setSato, setSwco, setSatg, setSwc
       <div className="inline-block text-center">
         <p>Swcg:</p>
         <input
-          className="ml-2 border w-12 bg-blue-100"
-          type="text"
+          className="ml-2 border w-12 bg-blue-100 text-right"
+          type="number"
           id="swcg"
           name="swcg"
+          value={swcg}
           onChange={(e) => handleSwcgChange(e)}
         />
         <p>(frac)</p>
