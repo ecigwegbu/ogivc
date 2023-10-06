@@ -23,11 +23,11 @@ const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMFactor, o
     }
     >&nbsp;</div>
     <div className='flex'>
-    <fieldset className="mt-0 mb-0 ml-0 rounded-md bg-stone-200 text-xs mr-2 p-2 max-w-xs flex justify-around border border-solid border-blue-900" onChange={(e) => handleReservoirTypeChange(e)}>
+    <fieldset className="mt-0 mb-0 ml-0 rounded-md bg-stone-200 text-xs mr-2 p-2 max-w-xs flex justify-around border border-solid border-blue-900" value={reservoirType} onChange={(e) => handleReservoirTypeChange(e)}>
         <legend className='font-bold'>Reservoir Type:</legend>
         <label className='mr-3'>
             <div className='flex justify-around'>
-          <input type='radio' id='oil' name='reservoirType' value='oil'/> &nbsp;Oil
+          <input type='radio' id='oil' name='reservoirType' value='oil' /> &nbsp;Oil
           </div>
         </label>
         <label className='mr-3'>

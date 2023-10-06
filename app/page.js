@@ -7,9 +7,17 @@ import OilPVT from '@components/OilPVT';
 import GasPVT from '@components/GasPVT';
 import RockProperties from '@components/RockProperties';
 import Saturations from '@components/Saturations';
+import GrossRockVolumes from '@components/GrossRockVolumes';
 import Volumes from '@components/Volumes';
+import Footer from '@components/Footer';
 // grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond 
 function Home() {
+  const [field, setField] = useState('');
+  const [layer, setLayer] = useState('');
+  const [block, setBlock] = useState('');
+  const [resCode, setResCode] = useState('');
+  const [reservoirType, setReservoirType] = useState('both');
+  const [mFactor, setMFactor] = useState('');
   const [boi, setBoi] = useState('');
   const [rsi, setRsi] = useState('');
   const [rhoo, setRhoo] = useState('');
@@ -24,12 +32,6 @@ function Home() {
   const [swco, setSwco] = useState('');
   const [satg, setSatg] = useState('');
   const [swcg, setSwcg] = useState('');
-  const [reservoirType, setReservoirType] = useState('both');
-  const [mFactor, setMFactor] = useState('');
-  const [field, setField] = useState('');
-  const [layer, setLayer] = useState('');
-  const [block, setBlock] = useState('');
-  const [fullName, setFullName] = useState('');
   const [grvOil, setGrvOil] = useState('');
   const [grvCapGas, setGrvCapGas] = useState('');
   const [stoiip, setStoiip] = useState('');
@@ -44,27 +46,8 @@ function Home() {
   const [ursg, setUrsg] = useState('');
   const [urfg, setUrfg] = useState('');
   const [urcond, setUrcond] = useState('');
-  // <Reservoir setField={setField} setLayer={seLaye} setBlock={setBlock} setFullName={setFullName} />
   const handleResChange = (e) => {
-    // console.log('---->--->', e.target.id)
-    // setFullName(`${field}-${layer}-${block}`);
-    /*
-    switch (e.target.id) {
-      case 'field':
-        setFullName(`${e.target.value}-${layer}-${block}`);
-        break;
-      case 'layer':
-        setFullName(`${field}-${e.target.value}-${block}`);
-        break;
-      case 'block':
-        setFullName(`${field}-${layer}-${e.target.value}`);
-        break;
-      default:
-        console.log('Error: Invalid Id')
-    }
-    // Calculate and display volumes
-    calcVolumes();
-    */
+    //
   };
 
   const calcVolumes = () => {
@@ -98,6 +81,11 @@ function Home() {
     // console.log('Hello Sats:', sato, swco, satg, swcg);
     calcVolumes();
   }
+  const handleGrossRockVolumesChange = (e) => {
+    // Calculate and display volumes
+    // console.log('Hello Sats:', sato, swco, satg, swcg);
+    calcVolumes();
+  }
   const handleVolumesChange = (e) => {
     // Calculate and display volumes
     // console.log('Hello Vols:', grvOil, grvCapGas, rfo, rfsg, rffg, rfcond);
@@ -116,7 +104,7 @@ function Home() {
   }
   const calcSgiip = () => {
     try {
-      setSgiip((stoiip * rsi).toFixed(1));
+      setSgiip((stoiip * rsi).toFixed(1)); // bscf
     } catch (error) {
       console.log('Error: could not calculate SGIIP');
     }
@@ -130,7 +118,7 @@ function Home() {
   }
   const calcCiip = () => {
     try {
-      setCiip((fgiip * cgr).toFixed(1));
+      setCiip((fgiip * cgr).toFixed(1)); // bscf
     } catch (error) {
       console.log('Error: could not calculate CIIP');
     }
@@ -165,14 +153,16 @@ function Home() {
   }
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
-      <Reservoir field={field} layer={layer} block={block} setStoiip={setStoiip} setField={setField} setLayer={setLayer} setBlock={setBlock} setFullName={setFullName} fullName={fullName} onResChange={handleResChange} />
+      <Reservoir field={field} layer={layer} block={block} setField={setField} setLayer={setLayer} setBlock={setBlock} setResCode={setResCode} resCode={resCode} onResChange={handleResChange} />
       <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">
         <OilPVT boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
         <GasPVT ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />
         <RockProperties poro={poro} ntgo={ntgo} porg={porg} ntgg={ntgg} setPoro={setPoro} setNtgo={setNtgo} setPorg={setPorg} setNtgg={setNtgg} onRockPropertiesChange={handleRockPropertiesChange} />
         <Saturations sato={sato} swaco={swco} satg={satg} swcg={swcg} setSato={setSato} setSwco={setSwco} setSatg={setSatg} setSwcg={setSwcg} onSaturationsChange={handleSaturationsChange} />
+        <GrossRockVolumes grvOil={grvOil} setGrvOil={setGrvOil} grvCapGas={grvCapGas} setGrvCapGas={setGrvCapGas} onGrossRockVolumesChange={handleGrossRockVolumesChange} />
         <Volumes grvOil={grvOil} grvCapGas={grvCapGas} stoiip={stoiip} sgiip={sgiip} fgiip={fgiip} ciip={ciip} rfo={rfo} rfsg={rfsg} rffg={rffg} rfcond={rfcond} uro={uro} ursg={ursg} urfg={urfg} urcond={urcond} setGrvOil={setGrvOil} setGrvCapGas={setGrvCapGas} setRfo={setRfo} setRfsg={setRfsg} setRffg={setRffg} setRfcond={setRfcond} onVolumesChange={handleVolumesChange} />
+        <Footer />
       </div>
     </div>
   );

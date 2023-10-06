@@ -31,7 +31,7 @@ const GasPVT = ({ ei, cgr, rhog, setEi, setCgr, setRhog, onGasPvtChange, reservo
         <p>stb/Mscf</p>
       </div>
       <div className='inline-block text-center'>
-        <p>&rho;g:</p>
+        <p>&gamma;g:</p>
         <input className='border w-16 bg-green-100' type='text' id='rhog' name='rhog' onChange={(e) => handleRhogChange(e)}/>
         <p>v/v</p>
         </div>

@@ -3,32 +3,29 @@
 import { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 
-const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBlock, setFullName, fullName, onResChange }) => {
+const Reservoir = ({ field, layer, block, setField, setLayer, setBlock, setResCode, resCode, onResChange }) => {
   const { data: session } = useSession();
   const handleFieldChange = (e) => {
     setField(e.target.value);
-    // setFullName(`${e.target.value}-${layer}-${block}`);
+    // setResCode(`${e.target.value}-${layer}-${block}`);
     // setStoiip(e.target.value); // test
-    // console.log(fullName);
     // onResChange(e);
   };
   const handleLayerChange = (e) => {
     setLayer(e.target.value);
-    // setFullName(`${field}-${e.target.value}-${block}`);
-    // console.log(fullName);
+    // setResCode(`${field}-${e.target.value}-${block}`);
     // onResChange(e);
   };
   const handleBlockChange = (e) => {
     setBlock(e.target.value);
-    // setFullName(`${field}-${layer}-${e.target.value}`);
-    // console.log(fullName);
+    // setResCode(`${field}-${layer}-${e.target.value}`);
     // onResChange(e);
   };
 
   useEffect(() => {
-    setFullName(`${field}-${layer}-${block}`);
+    setResCode(`${field}-${layer}-${block}`);
     // onResChange();
-  }, [field, layer, block, setFullName])
+  }, [field, layer, block, setResCode])
 
   // <div className='sticky top-[6.3rem] bg-gray-300 flex flex-row justify-between text-xs w-full'>
   return (
@@ -48,8 +45,8 @@ const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBloc
         <p>Block</p>
         </div>
       <div className='inline-block text-center'>
-        <input className='border w-20 bg-white-100 text-center text-slate-400' type='text' id='fullName' name='fullName' value={fullName} readOnly />
-        <p className='text-slate-400'>Full Name</p>
+        <input className='border w-20 bg-white-100 text-center text-slate-400' type='text' id='resCode' name='resCode' value={resCode} readOnly />
+        <p className='text-slate-400'>Res. Code</p>
         </div>
       </fieldset>
       <div className='ml-2 flex flex-col w-16 justify-around mr-2 mt-1 font-bold shadow-lg'>

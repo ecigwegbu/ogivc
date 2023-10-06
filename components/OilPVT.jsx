@@ -48,7 +48,7 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, reser
         <p>Mscf/stb</p>
       </div>
       <div className="inline-block text-center">
-        <p>&rho;o:</p>
+        <p>&gamma;o:</p>
         <input
           className="border w-16 bg-red-200"
           type="text"
