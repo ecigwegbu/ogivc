@@ -165,8 +165,8 @@ function Home() {
   }
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
-      <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <Reservoir field={field} layer={layer} block={block} setStoiip={setStoiip} setField={setField} setLayer={setLayer} setBlock={setBlock} setFullName={setFullName} fullName={fullName} onResChange={handleResChange} />
+      <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">
         <OilPVT boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
         <GasPVT ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />

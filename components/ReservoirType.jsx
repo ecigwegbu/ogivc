@@ -12,7 +12,7 @@ const ReservoirType = ({ reservoirType, setReservoirType, mFactor, setMFactor, o
     }
 
   return (
-    <div className={`sticky top-10 bg-slate-300 flex flex-row h-15 pb-1 justify-around w-full border-4 border-solid border-red-900 self-start`}>
+    <div className={`sticky mt-0 top-[6.5rem] bg-gray-300 flex flex-row h-15 pb-1 justify-around w-full border-b-4 border-b-blue-900 self-start`}>
     <div className={`mt-2 w-24 border ml-2 mr-2 h-8 rounded-tl-full rounded-tr-full bg-gradient-to-b
       ${
         reservoirType==='oil' ? 'from-red-500 to-blue-500' : (

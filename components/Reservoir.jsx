@@ -30,8 +30,9 @@ const Reservoir = ({ field, layer, block, setStoiip, setField, setLayer, setBloc
     // onResChange();
   }, [field, layer, block, setFullName])
 
+  // <div className='sticky top-[6.3rem] bg-gray-300 flex flex-row justify-between text-xs w-full'>
   return (
-    <div className='sticky top-[6.3rem] bg-gray-300 flex flex-row justify-between text-xs w-full'>
+    <div className='sticky top-10 mb-0 h-16 bg-gray-300 flex flex-row justify-between text-xs w-full'>
       <fieldset className="mt-0 mb-0 ml-2 bg-gray-100 text-xs p-2 w-full flex justify-around border border-solid border-blue-900 border-2">
         <legend className='font-bold'>Reservoir:</legend>
       <div className='inline-block text-center'>
