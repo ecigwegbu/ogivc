@@ -151,17 +151,25 @@ function Home() {
       console.log('Error: could not calculate UR-cond');
     }
   }
+  const resdata = { // reservoir data
+    field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
+  }
+  const setResdata = { // state setters for reservoir data
+    // field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
+    setField, setLayer, setBlock, setResCode, setReservoirType, setMFactor, setBoi, setRsi, setRhoo, setEi, setCgr, setRhog, setPoro, setNtgo, setPorg, setNtgg, setSato, setSwco, setSatg, setSwcg, setGrvOil, setGrvCapGas, setStoiip, setSgiip, setFgiip, setCiip, setRfo, setRfsg, setRffg, setRfcond, setUro, setUrsg, setUrfg, setUrcond,
+  }
+
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
-      <Reservoir field={field} layer={layer} block={block} setField={setField} setLayer={setLayer} setBlock={setBlock} setResCode={setResCode} resCode={resCode} onResChange={handleResChange} />
-      <ReservoirType reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
+      <Reservoir setResdata={setResdata} resdata={resdata} field={field} layer={layer} block={block} setField={setField} setLayer={setLayer} setBlock={setBlock} setResCode={setResCode} resCode={resCode} onResChange={handleResChange} />
+      <ReservoirType resdata={resdata} reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">
-        <OilPVT boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
-        <GasPVT ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />
-        <RockProperties poro={poro} ntgo={ntgo} porg={porg} ntgg={ntgg} setPoro={setPoro} setNtgo={setNtgo} setPorg={setPorg} setNtgg={setNtgg} onRockPropertiesChange={handleRockPropertiesChange} />
-        <Saturations sato={sato} swaco={swco} satg={satg} swcg={swcg} setSato={setSato} setSwco={setSwco} setSatg={setSatg} setSwcg={setSwcg} onSaturationsChange={handleSaturationsChange} />
-        <GrossRockVolumes grvOil={grvOil} setGrvOil={setGrvOil} grvCapGas={grvCapGas} setGrvCapGas={setGrvCapGas} onGrossRockVolumesChange={handleGrossRockVolumesChange} />
-        <Volumes grvOil={grvOil} grvCapGas={grvCapGas} stoiip={stoiip} sgiip={sgiip} fgiip={fgiip} ciip={ciip} rfo={rfo} rfsg={rfsg} rffg={rffg} rfcond={rfcond} uro={uro} ursg={ursg} urfg={urfg} urcond={urcond} setGrvOil={setGrvOil} setGrvCapGas={setGrvCapGas} setRfo={setRfo} setRfsg={setRfsg} setRffg={setRffg} setRfcond={setRfcond} onVolumesChange={handleVolumesChange} />
+        <OilPVT resdata={resdata} boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
+        <GasPVT resdata={resdata} ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />
+        <RockProperties resdata={resdata} poro={poro} ntgo={ntgo} porg={porg} ntgg={ntgg} setPoro={setPoro} setNtgo={setNtgo} setPorg={setPorg} setNtgg={setNtgg} onRockPropertiesChange={handleRockPropertiesChange} />
+        <Saturations resdata={resdata} sato={sato} swco={swco} satg={satg} swcg={swcg} setSato={setSato} setSwco={setSwco} setSatg={setSatg} setSwcg={setSwcg} onSaturationsChange={handleSaturationsChange} />
+        <GrossRockVolumes resdata={resdata} grvOil={grvOil} setGrvOil={setGrvOil} grvCapGas={grvCapGas} setGrvCapGas={setGrvCapGas} onGrossRockVolumesChange={handleGrossRockVolumesChange} />
+        <Volumes resdata={resdata} grvOil={grvOil} grvCapGas={grvCapGas} stoiip={stoiip} sgiip={sgiip} fgiip={fgiip} ciip={ciip} rfo={rfo} rfsg={rfsg} rffg={rffg} rfcond={rfcond} uro={uro} ursg={ursg} urfg={urfg} urcond={urcond} setGrvOil={setGrvOil} setGrvCapGas={setGrvCapGas} setRfo={setRfo} setRfsg={setRfsg} setRffg={setRffg} setRfcond={setRfcond} onVolumesChange={handleVolumesChange} />
         <Footer />
       </div>
     </div>
