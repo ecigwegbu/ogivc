@@ -37,7 +37,7 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
           disabled={resdata.reservoirType === 'gas'}
           onChange={(e) => handleGrvOilChange(e)}
         />
-        <p>Macft</p>
+        <p>(Macft)</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>GRV-cap gas:</p>
@@ -50,7 +50,7 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
           disabled={resdata.reservoirType === 'oil'}
           onChange={(e) => handleGrvCapGasChange(e)}
         />
-        <p>Macft</p>
+        <p>(Macft)</p>
       </div>
     </fieldset>
   );

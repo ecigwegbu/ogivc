@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Reservoir from '@components/Reservoir';
 // import TypeBar from '@components/TypeBar';
 import ReservoirType from '@components/ReservoirType';
+import MenuBar from '@components/MenuBar';
 import OilPVT from '@components/OilPVT';
 import GasPVT from '@components/GasPVT';
 import RockProperties from '@components/RockProperties';
@@ -161,6 +162,7 @@ function Home() {
 
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
+      <MenuBar setResdata={setResdata} />
       <Reservoir setResdata={setResdata} resdata={resdata} field={field} layer={layer} block={block} setField={setField} setLayer={setLayer} setBlock={setBlock} setResCode={setResCode} resCode={resCode} onResChange={handleResChange} />
       <ReservoirType resdata={resdata} reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">

@@ -1,6 +1,5 @@
-import { useState } from 'react';
 const resetResdata = (setResdata) => {
-    // alert('Before setResdata reset. ');
+    // console.log(`Before setResdata reset ${Object.keys(setResdata)}`);
     // setResdata.setCgr();
     Object.keys(setResdata).forEach((key) => {
         setResdata[key]('');
