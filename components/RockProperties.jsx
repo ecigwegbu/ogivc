@@ -1,8 +1,9 @@
-'use client'
+import { useEffect, useContext } from "react";
+import { DarkModeContext } from "@app/layout";
 
-import { useEffect } from 'react';
-
-const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, setNtgg, onRockPropertiesChange, resdata }) => {
+// const ReservoirType = ({ reservoirState: { state: { reservoirType, mFactor, }, stateSetter: { setReservoirType, setMFactor, }, }, }) => {
+const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, reservoirType, }, stateSetter: { setPoro, setNtgo, setPorg, setNtgg, } }, onRockPropertiesChange, }) => {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);  
   const handlePoroChange = (e) => {
     setPoro(e.target.value);
     // onRockPropertiesChange(e);
@@ -24,17 +25,17 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
   }, [poro, ntgo, porg, ntgg, onRockPropertiesChange]);
 
   return (
-    <fieldset className="mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1">
-      <legend className="font-bold bg-gradient-to-r from-indigo-900 via-slate-500 to-black bg-clip-text text-transparent">Rock Properties:</legend>
+    <fieldset className={`mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${darkMode ? 'bg-black text-white' : ''} `}>
+      <legend className="font-bold bg-gradient-to-r from-indigo-500 via-slate-500 to-gray-500 bg-clip-text text-transparent">Rock Properties:</legend>
       <div className="inline-block text-center mr-2">
         <p>Poro:</p>
         <input
-          className="border w-12 bg-beige-100 text-right shadow-md rounded-sm"
+          className={`border w-12 bg-beige-100 text-center shadow-md rounded-sm text-lg leading-3 ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="poro"
           name="poro"
           value={poro}
-          disabled={resdata.reservoirType === 'gas'}
+          disabled={reservoirType === 'gas'}
           onChange={(e) => handlePoroChange(e)}
         />
         <p>(frac)</p>
@@ -42,12 +43,12 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center mr-2">
         <p>N/Go:</p>
         <input
-          className="border w-12 bg-beige-100 text-right shadow-md rounded-sm"
+          className={`border w-12 bg-beige-100 text-center shadow-md rounded-sm text-lg leading-3 ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="ntgo"
           name="ntgo"
           value={ntgo}
-          disabled={resdata.reservoirType === 'gas'}
+          disabled={reservoirType === 'gas'}
           onChange={(e) => handleNtgoChange(e)}
         />
         <p>(frac)</p>
@@ -55,12 +56,12 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center mr-2">
         <p>Porg:</p>
         <input
-          className="border w-12 bg-beige-100 text-right shadow-md rounded-sm"
+          className={`border w-12 bg-beige-100 text-center shadow-md rounded-sm text-lg leading-3 ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="porg"
           name="v/v"
           value={porg}
-          disabled={resdata.reservoirType === 'oil'}
+          disabled={reservoirType === 'oil'}
           onChange={(e) => handlePorgChange(e)}
         />
         <p>(frac)</p>
@@ -68,12 +69,12 @@ const RockProperties = ({ poro, ntgo, porg, ntgg, setPoro, setNtgo, setPorg, set
       <div className="inline-block text-center">
         <p>N/Gg:</p>
         <input
-          className="border w-12 bg-beige-100 text-right shadow-md rounded-sm"
+          className={`border w-12 bg-beige-100 text-center shadow-md rounded-sm text-lg leading-3 ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="ntgg"
           name="v/v"
           value={ntgg}
-          disabled={resdata.reservoirType === 'oil'}
+          disabled={reservoirType === 'oil'}
           onChange={(e) => handleNtggChange(e)}
         />
         <p>(frac)</p>

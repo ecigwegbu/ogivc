@@ -1,0 +1,100 @@
+NextRequest = {
+    next: undefined,
+    [Symbol(realm)]: {
+        settingsObject: { baseUrl: undefined, origin: [Getter], policyContainer: [Object] }
+    },
+    [Symbol(state)]: {
+        method: 'GET',
+        localURLsOnly: false,
+        unsafeRequest: false,
+        body: null,
+        client: { baseUrl: undefined, origin: [Getter], policyContainer: [Object] },
+        reservedClient: null,
+        replacesClientId: '',
+        window: 'client',
+        keepalive: false,
+        serviceWorkers: 'all',
+        initiator: '',
+        destination: '',
+        priority: null,
+        origin: 'client',
+        policyContainer: 'client',
+        referrer: 'client',
+        referrerPolicy: '',
+        mode: 'cors',
+        useCORSPreflightFlag: false,
+        credentials: 'same-origin',
+        useCredentials: false,
+        cache: 'default',
+        redirect: 'follow',
+        integrity: '',
+        cryptoGraphicsNonceMetadata: '',
+        parserMetadata: '',
+        reloadNavigation: false,
+        historyNavigation: false,
+        userActivation: false,
+        taintedOrigin: false,
+        redirectCount: 0,
+        responseTainting: 'basic',
+        preventNoCacheCacheControlHeaderModification: false,
+        done: false,
+        timingAllowFailed: false,
+        headersList: HeadersList {
+    cookies: null,
+        [Symbol(headers map)]: [Map],
+            [Symbol(headers map sorted)]: [Array]
+},
+urlList: [[URL]],
+    url: URL {
+    href: 'http://localhost:3300/api/load?resCode=NEMC-D9-X',
+        origin: 'http://localhost:3300',
+            protocol: 'http:',
+                username: '',
+                    password: '',
+                        host: 'localhost:3300',
+                            hostname: 'localhost',
+                                port: '3300',
+                                    pathname: '/api/load',
+                                        search: '?resCode=NEMC-D9-X',
+                                            searchParams: URLSearchParams { 'resCode' => 'NEMC-D9-X' },
+    hash: ''
+}
+    },
+[Symbol(signal)]: AbortSignal { aborted: false },
+[Symbol(abortController)]: AbortController { signal: AbortSignal { aborted: false } },
+[Symbol(headers)]: HeadersList {
+    cookies: null,
+        [Symbol(headers map)]: Map(14) {
+        'accept' => [Object],
+            'accept-encoding' => [Object],
+                'accept-language' => [Object],
+                    'connection' => [Object],
+                        'cookie' => [Object],
+                            'host' => [Object],
+                                'referer' => [Object],
+                                    'sec-ch-ua' => [Object],
+                                        'sec-ch-ua-mobile' => [Object],
+                                            'sec-ch-ua-platform' => [Object],
+                                                'sec-fetch-dest' => [Object],
+                                                    'sec-fetch-mode' => [Object],
+                                                        'sec-fetch-site' => [Object],
+                                                            'user-agent' => [Object]
+    },
+    [Symbol(headers map sorted)]: [
+        [Array], [Array],
+        [Array], [Array],
+        [Array], [Array],
+        [Array], [Array],
+        [Array], [Array],
+        [Array], [Array],
+        [Array], [Array]
+    ]
+},
+[Symbol(internal request)]: {
+    cookies: RequestCookies { _parsed: [Map], _headers: [HeadersList] },
+    geo: { },
+    ip: undefined,
+        nextUrl: NextURL { [Symbol(NextURLInternal)]: [Object] },
+    url: 'http://localhost:3300/api/load?resCode=NEMC-D9-X'
+}
+}

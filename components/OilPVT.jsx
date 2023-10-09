@@ -1,8 +1,7 @@
-'use client'
+import { useEffect, useContext } from "react";
+import { DarkModeContext } from "@app/layout";
 
-import { useEffect } from "react";
-
-const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, resdata }) => {
+const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, stateSetter: { setBoi, setRsi, setRhoo, }, }, onOilPvtChange, }) => {
   const handleBoiChange = (e) => {
     // console.log('Hello Boi');
     setBoi(e.target.value);
@@ -21,14 +20,18 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, resda
     onOilPvtChange();
   }, [boi, rsi, rhoo, onOilPvtChange]);
 
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);  
 
+  // <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${resdata.reservoirType === 'gas' ? 'hidden' : ''}`}>
   return (
-    <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${resdata.reservoirType === 'gas' ? 'hidden' : ''}`}>
+    <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${reservoirType === 'gas' ? 'hidden' : ''}
+    ${darkMode ? 'bg-black text-white' : ''}
+    `}>
       <legend className="font-bold bg-gradient-to-r from-red-900 via-orange-500 to-yellow-600 bg-clip-text text-transparent">Oil Properties:</legend>
       <div className="inline-block text-center">
         <p>Boi:</p>
         <input
-          className="border w-16 bg-red-200 text-right shadow-md rounded-sm"
+          className={`border w-16 bg-red-200 text-center shadow-md rounded-sm text-lg leading-3 ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="boi"
           name="boi"
@@ -40,7 +43,7 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, resda
       <div className="inline-block text-center">
         <p>Rsi:</p>
         <input
-          className="border w-16 bg-red-200 text-right shadow-md rounded-sm"
+          className={`border w-16 bg-red-200 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="rsi"
           name="rsi"
@@ -52,7 +55,7 @@ const OilPVT = ({ boi, rsi, rhoo, setBoi, setRsi, setRhoo, onOilPvtChange, resda
       <div className="inline-block text-center">
         <p>&gamma;o:</p>
         <input
-          className="border w-16 bg-red-200 text-right shadow-md rounded-sm"
+          className={`border w-16 bg-red-200 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="rho"
           name="v/v"

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import { useState, useEffect, useContext } from 'react';
-import { DataContext } from '@app/layout';
+import { DarkModeContext } from '@app/layout';
 
 const Nav = () => {
   // The useSession hooke returns an object that contains session data, renamed here to session
@@ -35,11 +35,11 @@ const Nav = () => {
     })();
   }, []);
 
-  const { darkMode, setDarkMode } = useContext(DataContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
-    <nav className={`sticky top-0 h-10 flex flex-row items-center justify-between w-full ${darkMode ? 'text-white' : 'text-red-600'} bg-blue-900 text-xs`}>
-        <div className='ml-2' onClick={() => setDarkMode((prev) => !prev)} ><img src='/images/ogi-logo.png' alt='ogi-logo' className='w-12 h-8 border-1 rounded-full border border-solid border-orange-500 mt-1'/></div>
+    <nav className={`sticky top-0 h-10 flex flex-row items-center justify-between w-full ${darkMode ? 'text-gray-400' : 'text-white'} bg-blue-900 text-xs`}>
+        <div className='ml-2'><img src='/images/ogi-logo.png' alt='ogi-logo' className='w-12 h-8 border-1 rounded-full border border-solid border-orange-500 mt-1'/></div>
         <div className='flex flex-col pt-4 ml-10 justify-center items-end'>
           <div className='font-extrabold mb-0 pb-0'>Hydocarbon Volume Calculator</div>
           <p className='sticky text-[6pt] text-white mt-0 pt-0 pb-1'>Version 1.0</p>

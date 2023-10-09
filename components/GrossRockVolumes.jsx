@@ -1,8 +1,9 @@
-'use client'
+import { useEffect, useContext } from "react";
+import { DarkModeContext } from "@app/layout";
 
-import { useEffect } from 'react';
-
-const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossRockVolumesChange, resdata }) => {
+// const Saturations = ({ reservoirState: { state: { sato, swco, satg, swcg, reservoirType, }, stateSetter: { setSato, setSwco, setSatg, setSwcg, }, }, onSaturationsChange, }) => {
+const GrossRockVolumes = ({ reservoirState: { state: { grvOil, grvCapGas, reservoirType, }, stateSetter: { setGrvOil, setGrvCapGas, }, }, onGrossRockVolumesChange }) => {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);  
   const handleGrvOilChange = (e) => {
     setGrvOil(e.target.value);
     // onRockPropertiesChange(e);
@@ -24,17 +25,17 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
   }, [grvOil, grvCapGas, onGrossRockVolumesChange]);
 
   return (
-    <fieldset className="mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1">
-      <legend className="font-bold bg-gradient-to-r from-indigo-900 via-slate-500 to-black bg-clip-text text-transparent">Gross Rock Vols:</legend>
+    <fieldset className={`mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${darkMode ? 'bg-black text-white' : ''}`}>
+      <legend className="font-bold bg-gradient-to-r from-indigo-500 via-slate-500 to-gray-500 to-black bg-clip-text text-transparent">Gross Rock Volumes:</legend>
       <div className="inline-block text-center mr-2">
         <p>GRV-oil:</p>
         <input
-          className="rounded-sm border w-16 bg-beige-100 text-right shadow-md"
+          className={`rounded-sm border w-16 bg-beige-100 text-center text-lg leading-3 shadow-md ${darkMode ? 'text-black' : ''} `}
           type="number"
           id="grvOil"
           name="grvOil"
           value={grvOil}
-          disabled={resdata.reservoirType === 'gas'}
+          disabled={reservoirType === 'gas'}
           onChange={(e) => handleGrvOilChange(e)}
         />
         <p>(Macft)</p>
@@ -42,12 +43,12 @@ const GrossRockVolumes = ({ grvOil, grvCapGas, setGrvOil, setGrvCapGas, onGrossR
       <div className="inline-block text-center mr-2">
         <p>GRV-cap gas:</p>
         <input
-          className="rounded-sm border w-16 bg-beige-100 text-right shadow-md"
+          className={`rounded-sm border w-16 bg-beige-100 text-center text-lg leading-3 shadow-md ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="grvCapGas"
           name="grvCapGas"
           value={grvCapGas}
-          disabled={resdata.reservoirType === 'oil'}
+          disabled={reservoirType === 'oil'}
           onChange={(e) => handleGrvCapGasChange(e)}
         />
         <p>(Macft)</p>

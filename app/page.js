@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react';
 import Reservoir from '@components/Reservoir';
-// import TypeBar from '@components/TypeBar';
 import ReservoirType from '@components/ReservoirType';
 import MenuBar from '@components/MenuBar';
 import OilPVT from '@components/OilPVT';
@@ -11,7 +10,8 @@ import Saturations from '@components/Saturations';
 import GrossRockVolumes from '@components/GrossRockVolumes';
 import Volumes from '@components/Volumes';
 import Footer from '@components/Footer';
-// grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond 
+import getReservoirState from '@utils/reservoir-state';
+
 function Home() {
   const [field, setField] = useState('');
   const [layer, setLayer] = useState('');
@@ -152,26 +152,33 @@ function Home() {
       console.log('Error: could not calculate UR-cond');
     }
   }
-  const resdata = { // reservoir data
-    field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
-  }
-  const setResdata = { // state setters for reservoir data
-    // field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
-    setField, setLayer, setBlock, setResCode, setReservoirType, setMFactor, setBoi, setRsi, setRhoo, setEi, setCgr, setRhog, setPoro, setNtgo, setPorg, setNtgg, setSato, setSwco, setSatg, setSwcg, setGrvOil, setGrvCapGas, setStoiip, setSgiip, setFgiip, setCiip, setRfo, setRfsg, setRffg, setRfcond, setUro, setUrsg, setUrfg, setUrcond,
-  }
+  // const resdata = { // reservoir data
+  //  field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
+  // }
+  // const setResdata = { // state setters for reservoir data
+  // field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond,
+  // setField, setLayer, setBlock, setResCode, setReservoirType, setMFactor, setBoi, setRsi, setRhoo, setEi, setCgr, setRhog, setPoro, setNtgo, setPorg, setNtgg, setSato, setSwco, setSatg, setSwcg, setGrvOil, setGrvCapGas, setStoiip, setSgiip, setFgiip, setCiip, setRfo, setRfsg, setRffg, setRfcond, setUro, setUrsg, setUrfg, setUrcond,
+  // }
 
+  // const reservoirState = getReservoirState();
+  // console.log('reservoir data:keys', Object.keys(reservoirState));
+  // console.log('reservoir data:values', Object.values(reservoirState));
+  const reservoirState = { // reservoir data
+    state: { field, layer, block, resCode, reservoirType, mFactor, boi, rsi, rhoo, ei, cgr, rhog, poro, ntgo, porg, ntgg, sato, swco, satg, swcg, grvOil, grvCapGas, stoiip, sgiip, fgiip, ciip, rfo, rfsg, rffg, rfcond, uro, ursg, urfg, urcond },
+    stateSetter: { setField, setLayer, setBlock, setResCode, setReservoirType, setMFactor, setBoi, setRsi, setRhoo, setEi, setCgr, setRhog, setPoro, setNtgo, setPorg, setNtgg, setSato, setSwco, setSatg, setSwcg, setGrvOil, setGrvCapGas, setStoiip, setSgiip, setFgiip, setCiip, setRfo, setRfsg, setRffg, setRfcond, setUro, setUrsg, setUrfg, setUrcond },
+  }
   return (
     <div className='flex flex-col items-center justify-start max-w-[670px]'>
-      <MenuBar setResdata={setResdata} />
-      <Reservoir setResdata={setResdata} resdata={resdata} field={field} layer={layer} block={block} setField={setField} setLayer={setLayer} setBlock={setBlock} setResCode={setResCode} resCode={resCode} onResChange={handleResChange} />
-      <ReservoirType resdata={resdata} reservoirType={reservoirType} setReservoirType={setReservoirType} mFactor={mFactor} setMFactor={setMFactor} onReservoirTypeChange={handleReservoirTypeChange} />
+      <MenuBar reservoirState={reservoirState} />
+      <Reservoir reservoirState={reservoirState} onResChange={handleResChange} />
+      <ReservoirType reservoirState={reservoirState} onReservoirTypeChange={handleReservoirTypeChange} />
       <div className="flex flex-wrap justify-center gap-2 sm:w-full max-w-2xl">
-        <OilPVT resdata={resdata} boi={boi} rsi={rsi} rhoo={rhoo} setBoi={setBoi} setRsi={setRsi} setRhoo={setRhoo} onOilPvtChange={handleOilPvtChange} reservoirType={reservoirType} />
-        <GasPVT resdata={resdata} ei={ei} cgr={cgr} rhog={rhog} setEi={setEi} setCgr={setCgr} setRhog={setRhog} onGasPvtChange={handleGasPvtChange} reservoirType={reservoirType} />
-        <RockProperties resdata={resdata} poro={poro} ntgo={ntgo} porg={porg} ntgg={ntgg} setPoro={setPoro} setNtgo={setNtgo} setPorg={setPorg} setNtgg={setNtgg} onRockPropertiesChange={handleRockPropertiesChange} />
-        <Saturations resdata={resdata} sato={sato} swco={swco} satg={satg} swcg={swcg} setSato={setSato} setSwco={setSwco} setSatg={setSatg} setSwcg={setSwcg} onSaturationsChange={handleSaturationsChange} />
-        <GrossRockVolumes resdata={resdata} grvOil={grvOil} setGrvOil={setGrvOil} grvCapGas={grvCapGas} setGrvCapGas={setGrvCapGas} onGrossRockVolumesChange={handleGrossRockVolumesChange} />
-        <Volumes resdata={resdata} grvOil={grvOil} grvCapGas={grvCapGas} stoiip={stoiip} sgiip={sgiip} fgiip={fgiip} ciip={ciip} rfo={rfo} rfsg={rfsg} rffg={rffg} rfcond={rfcond} uro={uro} ursg={ursg} urfg={urfg} urcond={urcond} setGrvOil={setGrvOil} setGrvCapGas={setGrvCapGas} setRfo={setRfo} setRfsg={setRfsg} setRffg={setRffg} setRfcond={setRfcond} onVolumesChange={handleVolumesChange} />
+        <OilPVT reservoirState={reservoirState} onOilPvtChange={handleOilPvtChange} />
+        <GasPVT reservoirState={reservoirState} onGasPvtChange={handleGasPvtChange} />
+        <RockProperties reservoirState={reservoirState} onRockPropertiesChange={handleRockPropertiesChange} />
+        <Saturations reservoirState={reservoirState} onSaturationsChange={handleSaturationsChange} />
+        <GrossRockVolumes reservoirState={reservoirState} onGrossRockVolumesChange={handleGrossRockVolumesChange} />
+        <Volumes reservoirState={reservoirState} onVolumesChange={handleVolumesChange} />
         <Footer />
       </div>
     </div>

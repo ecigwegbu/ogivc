@@ -9,7 +9,7 @@ import { useState, createContext } from 'react';
 //   description: 'Oil and Gas Interactive Hydocarbon Volume Calculator',
 // }
 
-const DataContext = createContext();
+const DarkModeContext = createContext();
 
 export default function RootLayout({ children }) {
 
@@ -19,11 +19,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className='bg-blue-900'>
         <Provider>
-          <main className='bg-gray-300 ml-2 mr-2'>
-            <DataContext.Provider value={{ darkMode, setDarkMode }}>
+          <main className={`bg-gray-300 ml-2 mr-2  ${darkMode ? 'bg-gray-800' : ''}`}>
+            <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
               <Nav />
               {children}
-            </DataContext.Provider>
+            </DarkModeContext.Provider>
           </main>
         </Provider>
       </body>
@@ -31,4 +31,4 @@ export default function RootLayout({ children }) {
   )
 }
 
-export { DataContext };
+export { DarkModeContext };

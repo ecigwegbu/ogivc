@@ -3,11 +3,13 @@ const resetResdata = (setResdata) => {
     // setResdata.setCgr();
     Object.keys(setResdata).forEach((key) => {
         setResdata[key]('');
+        // console.log("field:", setResdata.reservoirState.field, '\n');
     });
+    // setResdata.reservoirStateSetter.setField('Hello');
     setResdata.setBoi(1);
     setResdata.setReservoirType('both');
-    setResdata.setSwco('');
+    // setResdata.setSwco('');
     // alert(`After Resdata reset. CGR=${resdata.cgr}`);
 }
 
-export default resetResdata
+export default resetResdata;
