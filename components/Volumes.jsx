@@ -25,6 +25,7 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
     }
     useEffect(() => {
         onVolumesChange();
+        console.log(darkMode);
     }, [grvOil, grvCapGas, rfo, rfsg, rffg, rfcond, onVolumesChange]);
 
     const liquidsUnit = 'MMstb';

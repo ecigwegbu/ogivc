@@ -18,15 +18,14 @@ const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, s
 
     useEffect(() => {
     onOilPvtChange();
+    console.log(darkMode);
   }, [boi, rsi, rhoo, onOilPvtChange]);
 
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);  
+  const { darkMode } = useContext(DarkModeContext);  
 
   // <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${resdata.reservoirType === 'gas' ? 'hidden' : ''}`}>
   return (
-    <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${reservoirType === 'gas' ? 'hidden' : ''}
-    ${darkMode ? 'bg-black text-white' : ''}
-    `}>
+    <fieldset className={`-z-1 mt-2 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${reservoirType === 'gas' ? 'hidden' : ''} ${darkMode ? 'bg-[#000] text-white' : ''}`}>
       <legend className="font-bold bg-gradient-to-r from-red-900 via-orange-500 to-yellow-600 bg-clip-text text-transparent">Oil Properties:</legend>
       <div className="inline-block text-center">
         <p>Boi:</p>

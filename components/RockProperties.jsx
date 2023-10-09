@@ -25,7 +25,7 @@ const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, res
   }, [poro, ntgo, porg, ntgg, onRockPropertiesChange]);
 
   return (
-    <fieldset className={`mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${darkMode ? 'bg-black text-white' : ''} `}>
+    <fieldset className={`mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${darkMode ? 'bg-[#000] text-white' : ''} `}>
       <legend className="font-bold bg-gradient-to-r from-indigo-500 via-slate-500 to-gray-500 bg-clip-text text-transparent">Rock Properties:</legend>
       <div className="inline-block text-center mr-2">
         <p>Poro:</p>
