@@ -27,7 +27,7 @@ const ReservoirType = ({ reservoirState: { state: { reservoirType, mFactor, }, s
     }
     >&nbsp;</div>
     <div className={`flex ${darkMode ? 'bg-black text-white' : ''}`}>
-    <fieldset className={`mt-0 mb-0 ml-0 rounded-md bg-stone-200 text-xs mr-2 p-2 max-w-xs flex justify-around border border-solid border-blue-900 ${darkMode ? 'bg-slate-900 text-white' : ''}`} value={reservoirType} onChange={(e) => handleReservoirTypeChange(e)}>
+    <fieldset className={`mt-0 mb-0 ml-0 rounded-md bg-stone-200 text-xs mr-2 p-2 max-w-xs flex justify-around border border-solid border-blue-900 ${darkMode ? 'bg-zinc-700 text-white' : ''}`} value={reservoirType} onChange={(e) => handleReservoirTypeChange(e)}>
         <legend className='font-bold'>Reservoir Type:</legend>
         <label className='mr-3'>
             <div className='flex justify-around'>
@@ -45,7 +45,7 @@ const ReservoirType = ({ reservoirState: { state: { reservoirType, mFactor, }, s
           </div>
         </label>
       </fieldset>
-        <div className={`items-start mt-0 mb-0 mr-2 rounded-md h-10 bg-stone-200 text-xs p-2 pt-0 pb-0 flex flex-col self-end justify-center border border-solid border-blue-900 ${darkMode ? 'bg-slate-900 text-white' : ''}`}>
+        <div className={`items-start mt-0 mb-0 mr-2 rounded-md h-10 bg-stone-200 text-xs p-2 pt-0 pb-0 flex flex-col self-end justify-center border border-solid border-blue-900 ${darkMode ? 'bg-zinc-700 text-white' : ''}`}>
           <p className='ml-1 p-0 '>M&nbsp;Factor:</p>
           <input className={`w-14 border-l mt-0 no-spinners text-center text-md leading-3 ${darkMode ? 'text-black' : ''}`} type='number' id='mFactor' name='mFactor' placeholder={reservoirType === 'both' ? '' : 'both only'} value={mFactor} readOnly={reservoirType !== 'both'} onChange={(e) => handleMFactorChange(e)}/>
         </div>

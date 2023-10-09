@@ -18,7 +18,7 @@ input[type="number"] {
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
-
+/*
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -81,8 +81,9 @@ input[type="number"] {
     padding: 0;
   }
 }
-
+*/
 /* Tailwind Styles */
+/*
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
@@ -132,12 +133,12 @@ input[type="number"] {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }
 
-/* Feed Component */
+/* Feed Component 
 .feed {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
-/* Form Component */
+/* Form Component 
 .form_textarea {
   @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
@@ -146,7 +147,7 @@ input[type="number"] {
   @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
-/* Nav Component */
+/* Nav Component 
 .logo_text {
   @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
 }
@@ -159,7 +160,7 @@ input[type="number"] {
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
 }
 
-/* PromptCard Component */
+/* PromptCard Component 
 .prompt_card {
   @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
@@ -179,9 +180,9 @@ input[type="number"] {
 .flex-between {
   @apply flex justify-between items-center;
 }
-
-/* ogiv components */
-/* First Navbar */
+*/
+/* ogiv components 
+/* First Navbar 
 .navbar-first {
   display: flex;
   justify-content: space-between;
@@ -190,12 +191,12 @@ input[type="number"] {
   color: white;
   padding: 10px;
 }
-/* Add margin to the sections */
+/* Add margin to the sections 
 .navbar-first > * {
   margin: 0 10px;
 }
 
-/* Style the logo container */
+/* Style the logo container 
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -214,11 +215,11 @@ input[type="number"] {
   white-space: nowrap;
 }
 
-/* Style the search bar */
+/* Style the search bar 
 .search-bar input[type="text"] {
   padding: 5px;
 }
-/* Style the login button */
+/* Style the login button 
 .login-button {
   background-color: #007bff;
   color: white;
@@ -226,21 +227,22 @@ input[type="number"] {
   padding: 10px 20px;
   cursor: pointer;
 }
-/* Second Navbar */
+/* Second Navbar 
 .navbar-second {
   display: flex;
-  background-color: rgb(255, 221, 0); /* Shell's yellow */
-  margin-top: 1rem; /* Adds a blank line between the two navbars */
+  background-color: rgb(255, 221, 0); /* Shell's yellow 
+  margin-top: 1rem; /* Adds a blank line between the two navbars 
 }
 
 .navbar-second fieldset {
   flex: 1;
   margin: 10px;
   padding: 10px;
-  background-color: rgb(255, 221, 0); /* Shell's yellow */
+  background-color: rgb(255, 221, 0); /* Shell's yellow 
 }
 
 .navbar-second fieldset input[type="text"] {
   width: 100%;
   margin-bottom: 5px;
 }
+*/

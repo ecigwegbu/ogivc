@@ -36,7 +36,7 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
 
   return (
     <div className={`flex flex-col items-center mx-1 ${darkMode ? 'bg-gray-800 text-white' : ''}`}>
-    <h3 className={`text-blue-900 mt-0 mb-0 font-extrabold ${darkMode ? 'text-blue-500' : ''}`}>Resource Volumes</h3>
+    <h3 className={`text-blue-900 mt-0 mb-0 font-extrabold ${darkMode ? 'text-blue-300' : ''}`}>Resource Volumes</h3>
     <p className={`text-blue-600 text-xs mt-1 b-0 font-bold self-start ${darkMode ? 'text-blue-400' : ''}`}>Oil and Condensate</p>
     <div className={`grid grid-rows-4 grid-cols-4 gap-0.5 bg-slate-200 border border-2 border-solid border-red-100 ${darkMode ? 'bg-gray-700 text-white' : ''}`}>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='headings' id='headings' readOnly/></div>

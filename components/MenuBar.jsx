@@ -18,10 +18,10 @@ const { data: session } = useSession();
   const { darkMode, setDarkMode } = useContext(DarkModeContext);  
   return (
     <div className='sticky top-10 flex flex-row justify-around py-1 font-bold items-centre w-full h-10 bg-blue-900 border-t border-t-gray-500'>
-        <button className={`bg-slate-200 pb-2 my-1 px-4 shadow-md rounded-sm ${darkMode ? 'text-black' : ''} text-red-400`} id='reset2' onClick={() => resetResdata(stateSetter)}>Clear</button>
-        <button className={`bg-slate-200 pb-2 my-1 px-4 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {saveReservoir(state, session)}}>Save</button>
-        <button className={`bg-slate-200 pb-2 my-1 px-4 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {loadReservoir(state.resCode, stateSetter, session)}}>Load</button>
-        <button className={`bg-slate-200 pb-2 my-1 px-4 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {deleteReservoir(state.resCode, session)}}>Delete</button>
+        <button className={`bg-slate-200 pb-2 my-1 px-2 shadow-md rounded-sm ${darkMode ? 'text-black' : ''} text-red-400`} id='reset2' onClick={() => resetResdata(stateSetter)}>Clear</button>
+        <button className={`bg-slate-200 pb-2 my-1 px-2 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {saveReservoir(state, session)}}>Save</button>
+        <button className={`bg-slate-200 pb-2 my-1 px-2 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {loadReservoir(state.resCode, stateSetter, session)}}>Load</button>
+        <button className={`bg-slate-200 pb-2 my-1 px-2 ${(darkMode && session) ? 'text-black' : ''} ${!session ? 'text-gray-400 font-extrabold' : ''} shadow-md rounded-sm`} disabled={!session} onClick={(e) => {deleteReservoir(state.resCode, session)}}>Delete</button>
           <img src={`${darkMode ? '/images/light.png' : '/images/dark.png'}`} alt='dark-mode' className='cursor-pointer hover:opacity-70 border-1 rounded-full border border-solid border-white w-6 h-6 mt-1 self-center' title={`${darkMode ? 'Light Mode' : 'Dark Mode'}`} onClick={() => setDarkMode((prev) => !prev)}/>
     </div>
   )

@@ -38,15 +38,15 @@ const Nav = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
-    <nav className={`sticky top-0 h-10 flex flex-row items-center justify-between w-full ${darkMode ? 'text-gray-400' : 'text-white'} bg-blue-900 text-xs`}>
+    <div className={`sticky top-0 h-10 flex flex-row items-center justify-between w-full ${darkMode ? 'text-gray-400' : 'text-white'} bg-blue-900 text-xs`}>
         <div className='ml-2'><img src='/images/ogi-logo.png' alt='ogi-logo' className='w-12 h-8 border-1 rounded-full border border-solid border-orange-500 mt-1'/></div>
-        <div className='flex flex-col pt-4 ml-10 justify-center items-end'>
-          <div className='font-extrabold mb-0 pb-0'>Hydocarbon Volume Calculator</div>
-          <p className='sticky text-[6pt] text-white mt-0 pt-0 pb-1'>Version 1.0</p>
+        <div className='flex flex-col pt-4 ml-5 justify-center items-start'>
+          <div className='font-extrabold mb-0 pb-0 leading-3 '>Hydocarbon Volume Calculator</div>
+          <p className='sticky text-[6pt] self-center text-white mt-0 pt-0 pb-1'>Version 1.0</p>
         </div>
         {session?.user ? (
           <>
-            <button className='hover:bg-blue-600 border p-1 rounded-full border-2 border-white-900' type='button' onClick={signOut}>
+            <button className='hover:bg-blue-600 p-1 rounded-full border-2 border-white-900' type='button' onClick={signOut}>
               Logout
             </button>
             <Link href='/profile'>
@@ -57,7 +57,7 @@ const Nav = () => {
               {providers &&
               Object.values(providers).map((provider) => (
                 <button
-                  className='hover:bg-blue-600 border p-1 rounded-full border-2 border-white-900'
+                  className='hover:bg-blue-600 p-1 rounded-full border-2 border-white-900'
                   type='button'
                   key={provider.name}
                   onClick={(e) => {
@@ -70,7 +70,7 @@ const Nav = () => {
             </>
           )
         }
-    </nav>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   const { darkMode } = useContext(DarkModeContext);  
   return (
-    <div className={`p-2 flex flex-col items-center justify-between w-full text-white bg-blue-900 text-xs border-2-blue-900 ${darkMode ? 'text-gray-600' : ''}`}>
+    <div className={`p-2 flex flex-col items-center justify-between w-full text-white bg-blue-900 text-xs border-2-blue-900 ${darkMode ? 'text-gray-500' : ''}`}>
       <small>&copy; 2023. MannedModule Inc. All Rights Reserved.</small>
       <small>
         <Link href="#" title="The Small Prints">
