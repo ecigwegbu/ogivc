@@ -31,7 +31,7 @@ const Reservoir = ({ reservoirState: { state: { field, layer, block, resCode, },
   // <div className='sticky top-[6.3rem] bg-gray-300 flex flex-row justify-between text-xs w-full'>
   return (
     <div className={`sticky top-20 mb-0 h-16 pb-1 bg-gray-300 flex flex-row justify-between text-xs w-full ${darkMode ? 'bg-violet-900 text-white' : ''}`}>
-      <fieldset className={`mt-0 mb-0 mx-2 bg-gray-100 text-md text-extrabold p-1 w-full flex justify-around border border-solid border-blue-900 border-2 rounded-md ${darkMode ? 'bg-[#000] text-white' : ''}`}>
+      <fieldset className={`mt-0 mb-0 mx-2 bg-gray-100 text-md text-extrabold p-1 w-full flex justify-around border border-solid border-blue-900 border-2 rounded-md ${darkMode ? 'bg-gray-900 text-white' : ''}`}>
         <legend className='font-bold pl-2'>Reservoir:</legend>
       <div className='inline-block text-center'>
         <input className={`border w-16 bg-white-100 text-center shadow-md rounded-sm  ${darkMode ? 'text-black' : ''}`} type='text' id='field' name='field' value={field} onChange={(e) => handleFieldChange(e)}/>

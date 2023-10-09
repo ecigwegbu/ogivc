@@ -13,7 +13,7 @@ const DarkModeContext = createContext();
 
 export default function RootLayout({ children }) {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState('false');
 
   return (
     <html lang="en">
