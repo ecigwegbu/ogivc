@@ -4,6 +4,16 @@
 
 const saveReservoir = async (state, session) => {
     // e.preventDefault();
+    // only if user logged in:
+    if (!session?.user) {
+        alert('Login required');
+        return -1;
+    } else if (!state?.resCode) {
+        // blank screen
+        alert('Specify the reservoir. Field, layer and block are required.');
+        return -1;
+    }
+
     const reservoirDocument = {
         user: session?.user.email, ...state,
     }

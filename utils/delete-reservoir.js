@@ -5,7 +5,12 @@ const deleteReservoir = async (resCode, session) => {
     if (!session?.user) {
         alert('Login required');
         return -1;
+    } else if (!resCode) {
+        // blank screen
+        alert('Specify the reservoir. Field, layer and block are required.');
+        return -1;
     }
+
 
     // construct a url that includes the reservoir code as a query parameter
     const url = new URL('/api/delete', window.location.origin);
