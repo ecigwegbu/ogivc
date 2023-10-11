@@ -49,7 +49,7 @@ const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, s
           value={rsi}
           onChange={(e) => handleRsiChange(e)}
         />
-        <p>Mscf/stb</p>
+        <p>scf/stb</p>
       </div>
       <div className="inline-block text-center">
         <p>&gamma;o:</p>

@@ -33,7 +33,7 @@ const GasPVT = ({ reservoirState : { state: { ei, cgr, rhog, reservoirType }, st
       <div className='inline-block text-center'>
         <p>CGR:</p>
         <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='cgr' name='cgr' value={cgr} onChange={(e) => handleCgrChange(e)}/>
-        <p>stb/Mscf</p>
+        <p>stb/MMscf</p>
       </div>
       <div className='inline-block text-center'>
         <p>&gamma;g:</p>

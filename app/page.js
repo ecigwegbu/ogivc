@@ -105,7 +105,7 @@ function Home() {
   }
   const calcSgiip = () => {
     try {
-      setSgiip((stoiip * rsi).toFixed(1)); // bscf
+      setSgiip((stoiip * rsi / 1000).toFixed(1)); // bscf
     } catch (error) {
       console.log('Error: could not calculate SGIIP');
     }
@@ -119,7 +119,7 @@ function Home() {
   }
   const calcCiip = () => {
     try {
-      setCiip((fgiip * cgr).toFixed(1)); // bscf
+      setCiip((fgiip * cgr / 1000).toFixed(1)); // MMbbl
     } catch (error) {
       console.log('Error: could not calculate CIIP');
     }
