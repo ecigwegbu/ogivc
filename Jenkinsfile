@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'pwd && npm --version'
+        sh 'pwd && node --version'
       }
     }
 
