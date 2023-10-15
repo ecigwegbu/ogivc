@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'nvm use 18 && node --version && /home/jenkins/.nvm/versions/node/v18.18.2/bin/npm run build'
+        sh 'whoami && /home/jenkins/.nvm/nvm.sh use 18 && node --version && /home/jenkins/.nvm/versions/node/v18.18.2/bin/npm run build'
       }
     }
 
