@@ -13,5 +13,18 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh 'npm i && npm run build'
+      }
+    }
+
+  }
+  environment {
+    GOOGLE_ID = '"175623644121-4644b1b0pa54kbi08ak4ajm1lu887ost.apps.googleusercontent.com"'
+    GOOGLE_CLIENT_SECRET = '"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"'
+    MONGODB_URI = '"mongodb+srv://igwegbu:1eDSUira2g9p1ahc@cluster0.vemkc9h.mongodb.net/?retryWrites=true&w=majority"'
+    NEXTAUTH_URL = '"http://localhost:3300"'
+    NEXTAUTH_SECRET = '"h2jFn2bfiY8fDSzRbGxgOprBjAeohSLQRlL6HKqHYlE="'
   }
 }
