@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'cd /var/lib/jenkins/workspace/ogivc_main && /home/jenkins/.nvm/versions/node/v18.18.2/bin/npm install'
+        sh 'which node'
       }
     }
 
