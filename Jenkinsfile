@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'whoami && echo $PATH'
+        sh 'node --version && npm --version'
       }
     }
 
