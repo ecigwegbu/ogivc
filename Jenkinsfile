@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'nvm use 18 && node --version && npm --version'
+        sh 'node --version && npm --version'
       }
     }
 
