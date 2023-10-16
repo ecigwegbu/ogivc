@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'npm --version && node --version && pwd && npm run build'
+        sh 'npm --version && node --version && pwd && npm install && npm run build'
       }
     }
 
