@@ -42,14 +42,14 @@ const Nav = () => {
         <div className='ml-2'><img src='/images/ogi-logo.png' alt='ogi-logo' className='w-12 h-8 border-1 rounded-full border border-solid border-orange-500 mt-1'/></div>
         <div className='flex flex-col pt-4 ml-5 justify-center items-start'>
           <div className='font-extrabold mb-0 pb-0 leading-3 '>Hydocarbon Volume Calculator</div>
-          <p className='sticky text-[6pt] self-center text-white mt-0 pt-0 pb-1'>Version 1.0</p>
+          <p className='sticky text-[6pt] self-center text-white mt-0 pt-0 pb-1 mb-1'>Version 1.01</p>
         </div>
         {session?.user ? (
           <>
             <button className='hover:bg-blue-600 p-1 rounded-full border-2 border-white-900' type='button' onClick={signOut}>
               Logout
             </button>
-            <Link href='/profile'>
+            <Link href='/'>
               <Image className='rounded-full mr-2' src={session?.user.image} alt='user' width='40' height='40'/>
             </Link>
           </>

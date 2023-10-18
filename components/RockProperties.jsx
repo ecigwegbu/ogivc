@@ -38,7 +38,7 @@ const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, res
           disabled={reservoirType === 'gas'}
           onChange={(e) => handlePoroChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>N/Go:</p>
@@ -51,7 +51,7 @@ const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, res
           disabled={reservoirType === 'gas'}
           onChange={(e) => handleNtgoChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>Porg:</p>
@@ -64,7 +64,7 @@ const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, res
           disabled={reservoirType === 'oil'}
           onChange={(e) => handlePorgChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center">
         <p>N/Gg:</p>
@@ -77,7 +77,7 @@ const RockProperties = ({ reservoirState: { state: { poro, ntgo, porg, ntgg, res
           disabled={reservoirType === 'oil'}
           onChange={(e) => handleNtggChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
     </fieldset>
   );

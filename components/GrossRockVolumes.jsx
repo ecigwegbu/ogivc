@@ -26,7 +26,7 @@ const GrossRockVolumes = ({ reservoirState: { state: { grvOil, grvCapGas, reserv
 
   return (
     <fieldset className={`mt-0 mb-0 rounded-md bg-gray-100 text-xs p-2 w-full sm:w-48pct min-w-250 flex justify-around mx-1 ${darkMode ? 'bg-gray-900 text-white' : ''}`}>
-      <legend className="font-bold bg-gradient-to-r from-indigo-500 via-slate-500 to-gray-500 to-black bg-clip-text text-transparent">Gross Rock Volumes:</legend>
+      <legend className="font-bold bg-gradient-to-r from-indigo-500 via-slate-500 to-gray-500 bg-clip-text text-transparent">Gross Rock Volumes:</legend>
       <div className="inline-block text-center mr-2">
         <p>GRV-oil:</p>
         <input
@@ -38,7 +38,7 @@ const GrossRockVolumes = ({ reservoirState: { state: { grvOil, grvCapGas, reserv
           disabled={reservoirType === 'gas'}
           onChange={(e) => handleGrvOilChange(e)}
         />
-        <p>(Macft)</p>
+        <p>Macft</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>GRV-cap gas:</p>
@@ -51,7 +51,7 @@ const GrossRockVolumes = ({ reservoirState: { state: { grvOil, grvCapGas, reserv
           disabled={reservoirType === 'oil'}
           onChange={(e) => handleGrvCapGasChange(e)}
         />
-        <p>(Macft)</p>
+        <p>Macft</p>
       </div>
     </fieldset>
   );

@@ -37,7 +37,7 @@ const Saturations = ({ reservoirState: { state: { sato, swco, satg, swcg, reserv
           disabled={reservoirType === 'gas'}
           onChange={(e) => handleSatoChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>Swco:</p>
@@ -50,7 +50,7 @@ const Saturations = ({ reservoirState: { state: { sato, swco, satg, swcg, reserv
           disabled={reservoirType === 'gas'}
           onChange={(e) => handleSwcoChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center mr-2">
         <p>Satg:</p>
@@ -63,7 +63,7 @@ const Saturations = ({ reservoirState: { state: { sato, swco, satg, swcg, reserv
           disabled={reservoirType === 'oil'}
           onChange={(e) => handleSatgChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
       <div className="inline-block text-center">
         <p>Swcg:</p>
@@ -76,7 +76,7 @@ const Saturations = ({ reservoirState: { state: { sato, swco, satg, swcg, reserv
           disabled={reservoirType === 'oil'}
           onChange={(e) => handleSwcgChange(e)}
         />
-        <p>(frac)</p>
+        <p>%</p>
       </div>
     </fieldset>
   );

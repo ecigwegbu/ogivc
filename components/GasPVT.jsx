@@ -27,18 +27,18 @@ const GasPVT = ({ reservoirState : { state: { ei, cgr, rhog, reservoirType }, st
         <legend className='font-bold bg-gradient-to-r from-green-900 via-green-700 to-green-400 bg-clip-text text-transparent'>Gas Properties:</legend>
       <div className='inline-block text-center'>
         <p>Ei:</p>
-        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='ei' name='ei' value={ei} onChange={(e) => handleEiChange(e)}/>
+        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='ei' name='ei' value={ei} min={1} max={100} onChange={(e) => handleEiChange(e)}/>
         <p>scf/rcf</p>
       </div>
       <div className='inline-block text-center'>
         <p>CGR:</p>
-        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='cgr' name='cgr' value={cgr} onChange={(e) => handleCgrChange(e)}/>
+        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='cgr' name='cgr' value={cgr} min={1} max={200} onChange={(e) => handleCgrChange(e)}/>
         <p>stb/MMscf</p>
       </div>
       <div className='inline-block text-center'>
         <p>&gamma;g:</p>
-        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='rhog' name='rhog' value={rhog} onChange={(e) => handleRhogChange(e)}/>
-        <p>v/v</p>
+        <input className={`border w-16 bg-green-100 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`} type='number' id='rhog' name='rhog' value={rhog} min={0.01} max={1} onChange={(e) => handleRhogChange(e)}/>
+        <p>(air=1)</p>
         </div>
       </fieldset>
   )

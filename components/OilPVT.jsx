@@ -35,6 +35,8 @@ const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, s
           id="boi"
           name="boi"
           value={boi}
+          min={1}
+          max={2}
           onChange={(e) => handleBoiChange(e)}
         />
         <p>rb/stb</p>
@@ -47,6 +49,8 @@ const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, s
           id="rsi"
           name="rsi"
           value={rsi}
+          min={1}
+          max={3000}
           onChange={(e) => handleRsiChange(e)}
         />
         <p>scf/stb</p>
@@ -57,11 +61,13 @@ const OilPVT = ({ reservoirState: { state: { boi, rsi, rhoo, reservoirType, }, s
           className={`border w-16 bg-red-200 text-center shadow-md rounded-sm text-lg leading-3  ${darkMode ? 'text-black' : ''}`}
           type="number"
           id="rho"
-          name="v/v"
+          name=""
           value={rhoo}
+          min={0.5}
+          max={1}         
           onChange={(e) => handleRhooChange(e)}
         />
-        <p>v/v</p>
+        <p>(water=1)</p>
       </div>
     </fieldset>
   );

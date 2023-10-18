@@ -98,7 +98,7 @@ function Home() {
   const calcStoiip = () => {
     try {
       // console.log('stooip params:', grvOil, poro, ntgo, boi);
-      setStoiip((7.7584 * grvOil * ntgo * poro * sato / boi).toFixed(1)); // MMstb
+      setStoiip((7.7584 * grvOil * ntgo / 100 * poro / 100 * sato / 100 / boi).toFixed(1)); // MMstb
     } catch (error) {
       console.log('Error: could not calculate STOIIP');
     }
@@ -112,7 +112,7 @@ function Home() {
   }
   const calcFgiip = () => {
     try {
-      setFgiip((0.043560 * grvCapGas * ntgg * porg * satg * ei).toFixed(1));  // Bscf
+      setFgiip((0.043560 * grvCapGas * ntgg / 100 * porg / 100 * satg / 100 * ei).toFixed(1));  // Bscf
     } catch (error) {
       console.log('Error: could not calculate FGIIP');
     }
@@ -126,28 +126,28 @@ function Home() {
   }
   const calcUro = () => {
     try {
-      setUro((stoiip * rfo).toFixed(1));
+      setUro((stoiip * rfo / 100).toFixed(1));
     } catch (error) {
       console.log('Error: could not calculate UR-oil');
     }
   }
   const calcUrsg = () => {
     try {
-      setUrsg((sgiip * rfsg).toFixed(1));
+      setUrsg((sgiip * rfsg / 100).toFixed(1));
     } catch (error) {
       console.log('Error: could not calculate UR-sg');
     }
   }
   const calcUrfg = () => {
     try {
-      setUrfg((fgiip * rffg).toFixed(1));
+      setUrfg((fgiip * rffg / 100).toFixed(1));
     } catch (error) {
       console.log('Error: could not calculate UR-fg');
     }
   }
   const calcUrcond = () => {
     try {
-      setUrcond((ciip * rfcond).toFixed(1));
+      setUrcond((ciip * rfcond / 100).toFixed(1));
     } catch (error) {
       console.log('Error: could not calculate UR-cond');
     }
