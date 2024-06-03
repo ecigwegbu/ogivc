@@ -38,7 +38,7 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
     <div className={`flex flex-col items-center mx-1 ${darkMode ? 'bg-gray-800 text-white' : ''}`}>
     <h3 className={`text-blue-900 mt-0 mb-0 font-extrabold ${darkMode ? 'text-blue-300' : ''}`}>Resource Volumes</h3>
     <p className={`text-blue-600 text-xs mt-1 b-0 font-bold self-start ${darkMode ? 'text-blue-400' : ''}`}>Oil and Condensate</p>
-    <div className={`grid grid-rows-4 grid-cols-4 gap-0.5 bg-slate-200 border-2 border-solid border-red-100 ${darkMode ? 'bg-gray-700 text-white' : ''}`}>
+    <div className={`grid grid-rows-4 grid-cols-4 gap-0.5 bg-slate-200 border border-2 border-solid border-red-100 ${darkMode ? 'bg-gray-700 text-white' : ''}`}>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='headings' id='headings' readOnly/></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center font-bold h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='oil' id='volOil' placeholder='Oil' readOnly /></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center font-bold h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='cond' id='volCond' placeholder='Cond.' readOnly /></div>
@@ -51,7 +51,7 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
 
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border font-bold text-right text-sm h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='rf' id='rf' placeholder='Enter RF->' readOnly /></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-red-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rfo' id='rfo' placeholder='<RF-oil>' value={rfo} onChange={(e) => handleRfoChange(e)}/></div>
-        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-red-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rfcond' id='rfcond' placeholder='<RF-cond>' value={rfcond}  onChange={(e) => handleRfcondChange(e)}/></div>
+        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-red-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rfcond' id='rfcond' placeholder='<RF-cond>' value={rfcond} pr-4 onChange={(e) => handleRfcondChange(e)}/></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-xs text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='rfUnitOilAndCondensate' id='rfUnitOilAndCondensate' value={rfUnit} readOnly  /></div>
 
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border font-bold text-right h-full ${darkMode ? 'bg-black text-white' : ''} `} type='text' name='ur' id='ur' placeholder='UR' readOnly /></div>
@@ -61,7 +61,7 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
     </div>
 
     <p className={`text-blue-600 text-xs mt-1 b-0 font-bold self-start ${darkMode ? 'text-blue-400' : ''}`}>Solution Gas and Free Gas</p>
-    <div className='grid grid-rows-4 grid-cols-4 gap-0.5 bg-slate-200 border-2 border-solid border-green-100'>
+    <div className='grid grid-rows-4 grid-cols-4 gap-0.5 bg-slate-200 border border-2 border-solid border-green-100'>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='headings' id='headings' readOnly/></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center font-bold h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='solGas' id='volSolGas' placeholder='Soln Gas' readOnly /></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-center font-bold h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='capGas' id='volCapGas' placeholder='Free Gas' readOnly /></div>
@@ -73,8 +73,8 @@ const Volumes = ({ reservoirState: { state: { grvOil, grvCapGas, stoiip, sgiip, 
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-xs text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='hciipSolGasAndFreeGas' id='hciipSolGasAndFreeGas' value={gasUnit} readOnly  /></div>
 
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border font-bold text-right text-sm h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='rf' id='rf' placeholder='Enter RF->' readOnly /></div>
-        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-green-400 h-full ${darkMode ? 'bg-black text-white' : ''} p-2`} type='number' name='rfsg' id='rfsg' placeholder='<RF-sg>' value={rfsg} onChange={(e) => handleRfsgChange(e)}/></div>
-        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-green-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rffg' id='rffg' placeholder='<RF-fg>' value={rffg}  onChange={(e) => handleRffgChange(e)}/></div>
+        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-green-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rfsg' id='rfsg' placeholder='<RF-sg>' value={rfsg} pr-4 onChange={(e) => handleRfsgChange(e)}/></div>
+        <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-right text-sm placeholder-green-400 h-full ${darkMode ? 'bg-black text-white' : ''} pr-2`} type='number' name='rffg' id='rffg' placeholder='<RF-fg>' value={rffg} pr-4 onChange={(e) => handleRffgChange(e)}/></div>
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border text-xs text-center h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='tfUnitGas' id='rfUnitGas' value={rfUnit} readOnly  /></div>
 
         <div> <input className={`border border-1 border-dotted-gray-400 w-full m-0 box-border font-bold text-right h-full ${darkMode ? 'bg-black text-white' : ''}`} type='text' name='ur' id='ur' placeholder='UR' readOnly /></div>
