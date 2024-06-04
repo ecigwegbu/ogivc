@@ -59,7 +59,8 @@ pipeline {
                     sh """
                     ssh -o StrictHostKeyChecking=no ubuntu@${EC2_HOST} << EOF
                     podman pull docker.io/${DOCKER_IMAGE}
-                    podman ps -aq | xargs -r podman rm -f  # Ensure it only runs if there are containers
+                    podman ps -a --filter ancestor=docker.io/igwegbu/ogivc:latest --format '{{.ID}}' | xargs -r podman rm -f  # Ensure it only runs if there are containers
+                    # podman ps -aq | xargs -r podman rm -f  # Ensure it only runs if there are containers
                     podman run -d -p 3300:3300 --env-file=${OGIVC_ENV_FILE} docker.io/${DOCKER_IMAGE}
                     exit 0  # Explicitly exit to avoid any EOF errors
                     EOF
