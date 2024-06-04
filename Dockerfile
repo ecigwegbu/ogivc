@@ -1,6 +1,6 @@
 FROM node:20-alpine
 WORKDIR /usr/src/ogivc/
-COPY .env .
+# COPY .env .
 # COPY .next/ .
 COPY Next13.requestObject.js .
 COPY app/ ./app/
