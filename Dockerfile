@@ -18,4 +18,5 @@ COPY tailwind.config.js .
 COPY utils/ ./utils/
 RUN npm install
 RUN npm run build
+EXPOSE 3300
 CMD ["npm", "start"]
