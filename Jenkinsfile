@@ -61,7 +61,7 @@ pipeline {
                     podman pull docker.io/${DOCKER_IMAGE}
                     podman ps -a --filter ancestor=docker.io/igwegbu/ogivc:latest --format '{{.ID}}' | xargs -r podman rm -f  # Ensure it only runs if there are containers
                     # podman ps -aq | xargs -r podman rm -f  # Ensure it only runs if there are containers
-                    podman run -d -p 3300:3300 --env-file=${OGIVC_ENV_FILE} docker.io/${DOCKER_IMAGE}
+                    nohup podman run -d -p 3300:3300 --env-file=${OGIVC_ENV_FILE} docker.io/${DOCKER_IMAGE} >> /tmp/podman.log 2>&1
                     exit 0  # Explicitly exit to avoid any EOF errors
                     EOF
                     """
