@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ogivc
+  name: ogivc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ogivc
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: ogivc
+    spec:
+      containers:
+      - image: docker.io/igwegbu/ogivc:latest
+        name: ogivc
+        ports:
+        - containerPort: 3300
+        resources: {}
+        envFrom:
+        - configMapRef:
+            name: ogivc
+        - secretRef:
+            name: ogivc

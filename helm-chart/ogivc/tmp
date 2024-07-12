@@ -1,0 +1,12 @@
+NAMESPACE   NAME                        READY   STATUS    RESTARTS   AGE
+default     pod/ogivc-887dc9bcf-tdzpv   1/1     Running   0          8m24s
+default     pod/ogivc-887dc9bcf-v7lxb   1/1     Running   0          8m24s
+
+NAMESPACE   NAME            TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+default     service/ogivc   NodePort   10.107.187.213   <none>        3300:30721/TCP   8m25s
+
+NAMESPACE   NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+default     deployment.apps/ogivc   2/2     2            2           8m25s
+
+NAMESPACE   NAME                              DESIRED   CURRENT   READY   AGE
+default     replicaset.apps/ogivc-887dc9bcf   2         2         2       8m24s
